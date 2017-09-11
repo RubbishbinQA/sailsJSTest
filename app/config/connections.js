@@ -18,6 +18,8 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html
  */
+'use strict'
+require('dotenv').config()
 
 module.exports.connections = {
 
@@ -28,9 +30,9 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-  localDiskDb: {
-    adapter: 'sails-disk'
-  },
+  //localDiskDb: {
+   // adapter: 'sails-disk'
+  //},
 
   /***************************************************************************
   *                                                                          *
@@ -56,14 +58,14 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-  // someMongodbServer: {
-  //   adapter: 'sails-mongo',
-  //   host: 'localhost',
-  //   port: 27017,
-  //   user: 'username', //optional
-  //   password: 'password', //optional
-  //   database: 'your_mongo_db_name_here' //optional
-  // },
+  mLabFelipe: {
+     adapter: 'sails-mongo',
+     host: process.env.DB_HOST,
+     port: process.env.DB_PORT,
+     user: process.env.DB_USER, //optional
+     password: process.env.DB_PASS, //optional
+     database: process.env.DB_DATA  //optional
+   },
 
   /***************************************************************************
   *                                                                          *
